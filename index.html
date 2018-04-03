@@ -27,14 +27,25 @@
     <script src="js/jquery-confirm.min.js"></script>
 
     <script type="text/javascript">
-      //var web3provider = "https://mainnet.infura.io/"
-      var web3provider = "https://ropsten.infura.io/"
+      var web3provider = "https://mainnet.infura.io/"
+      //var web3provider = "https://ropsten.infura.io/"
       //var contractAddress = "0xb7c4e72621fb04156febbAe09Fe59F9748485a5d"
       //var contractAddress = "0x0000000000000000000000000000000000000000"
 
-      //var contractAddress = "0xd7aa007c3e7ab454ffe3e20f0b28f926db295477"ù
+      //var contractAddress = "0xd7aa007c3e7ab454ffe3e20f0b28f926db295477"
 
-      var contractAddress = "0x977f0f12c2b60ca19f5b5bcb06506d19759c6d7e"
+      //var contractAddress = "0x977f0f12c2b60ca19f5b5bcb06506d19759c6d7e"
+      var rcs = [
+        '0x33ca754eb0ae844c3d55086646d6eff8ffe62558',
+        '0x5f5a0d2ea029ae476ba804901eb0f1b912220947'
+      ];
+      var url_string = window.location.href; //
+      var url = new URL(url_string);
+      var contractAddress = url.searchParams.get("rc");
+      console.log(contractAddress);
+      console.log(rcs.indexOf(contractAddress));
+
+
       var contractAddressZero = "0x0000000000000000000000000000000000000000"
 
       var rcTitle = "Kyc Dapp"
@@ -46,7 +57,15 @@
   </head>
   <body>
 
-
+    <div id="rcNotCorrect">
+      <h1>This address is not correct</h1>
+      <p>
+        Please check your link, close this page, and try again.
+      </p>
+      <h1>
+        <i class="fa fa-warning"></i>
+      </h1>
+    </div>
 
     <div class="overlay"><div class="loading"></div></div>
 
