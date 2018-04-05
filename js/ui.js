@@ -196,6 +196,7 @@ function checkKyc(){
     $("#notAuthorized").hide()
 
   }else{
+
     //Address is correct!
     $("#ethAddress .err").hide()
     $("#ethAddress .ok").show()
@@ -231,7 +232,7 @@ function checkKyc(){
 $(function() {
   if(rcs.indexOf(contractAddress) <0){
     //
-    alert("This is not a correct address");
+    //alert("This is not a correct address");
     $("#rcNotCorrect").show()
 
   }else{
@@ -239,7 +240,7 @@ $(function() {
     $("#rcNotCorrect").hide()
   }
 
-  
+
 
 
   $('#ethAddress input').on('keyup input propertychange paste change', function(e) {
