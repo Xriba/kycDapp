@@ -1,14 +1,5 @@
 
 
-var account = web3.eth.accounts[0];
-var accountInterval = setInterval(function() {
-  if (web3.eth.accounts[0] !== account && $("#ethAddress input").val() && localStorage.getItem("wallet")=="metamask" ) {
-    account = web3.eth.accounts[0];
-    //updateInterface();
-    console.log('%c METAMASK CHANGE ACCOIUNT! ', 'background: #000; color: #ffffff; font-size:15px;');
-    checkKyc()
-  }
-}, 1000);
 
 
 
@@ -83,6 +74,17 @@ window.addEventListener('load', function () {
     }
   });
 
+
+
+  var account = web3.eth.accounts[0];
+  var accountInterval = setInterval(function() {
+    if (web3.eth.accounts[0] !== account && $("#ethAddress input").val() && localStorage.getItem("wallet")=="metamask" ) {
+      account = web3.eth.accounts[0];
+      //updateInterface();
+      console.log('%c METAMASK CHANGE ACCOIUNT! ', 'background: #000; color: #ffffff; font-size:15px;');
+      checkKyc()
+    }
+  }, 1000);
 
 
 
