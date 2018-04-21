@@ -182,8 +182,8 @@ function setCoinCrowdQr(eth,data){
 
 
 function checkKyc(){
-  var urlIcoEngine = "https://eidoo-api-1.eidoo.io/api/ico/" + contractAddress + "/authorization/" + $('#ethAddress input').val() + "/tier1"
-  //var urlIcoEngine = "https://eidoo-api-1.eidoo.io/api/ico/" + contractAddress + "/authorization/" + $('#ethAddress input').val()
+  var urlIcoEngine = "https://eidoo-api-1.eidoo.io/api/ico/" + contractAddressZero + "/authorization/" + $('#ethAddress input').val() + "/tier1"
+  //var urlIcoEngine = "https://eidoo-api-1.eidoo.io/api/ico/" + contractAddressZero + "/authorization/" + $('#ethAddress input').val()
 
   //var urlIcoEngine = "icoEngineFakeResponse.json"
   console.log("url", urlIcoEngine);
@@ -252,12 +252,10 @@ $(function() {
 
 
   $(".claimTokenWithMetamask").on("click", function(e){
-    //var contractAddress_ = contractAddress
-    var contractAddress_switch = contractAddressZero
-
+    
     var transactionObject = {
       from: $('#ethAddress input').val(),
-      to: contractAddress_switch,
+      to: contractAddress,
       value: 0,
       gas: 250000,
       data: $("textarea.data").val()
