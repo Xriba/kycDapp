@@ -231,7 +231,9 @@ function checkKyc(){
 
 $(function() {
 
-  if(  rcs.toLocaleString().toLowerCase().split(',').indexOf(contractAddress.toLowerCase())  <0 ){
+  var contractCheck = rcs.toLocaleString().toLowerCase().split(',').indexOf(contractAddress.toLowerCase())
+  console.log("contractCheck",contractCheck);
+  if(  contractCheck<0 ){
     //
     //alert("This is not a correct address");
     $("#rcNotCorrect").show()
