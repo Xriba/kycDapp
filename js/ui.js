@@ -230,7 +230,7 @@ function checkKyc(){
 
 
 $(function() {
-  if(rcs.indexOf(contractAddress) <0){
+  if(rcs.toLowerCase().indexOf(contractAddress.toLowerCase()) <0){
     //
     //alert("This is not a correct address");
     $("#rcNotCorrect").show()
@@ -252,7 +252,7 @@ $(function() {
 
 
   $(".claimTokenWithMetamask").on("click", function(e){
-    
+
     var transactionObject = {
       from: $('#ethAddress input').val(),
       to: contractAddress,
